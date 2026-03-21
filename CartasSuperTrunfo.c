@@ -15,9 +15,10 @@ int main() {
     int pontosTuristicos1, pontosTuristicos2;
     float DensidadePopulacional1, DensidadePopulacional2;
     float PIBperCapita1, PIBperCapita2;
+    float Superpoder1, Superpoder2;
 
   // Área para entrada de dados
-    printf("\nCARTA 1\n");
+    printf("\n***CARTA 1***\n");
     printf("Estado (A-H): ");
     scanf(" %c", &Estado1);
     printf("Codigo da Carta (ex: A01): ");
@@ -33,10 +34,11 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos1);
 
-    DensidadePopulacional1 = Populacao1 / area1;
-    PIBperCapita1 = pib1 / Populacao1;
+    DensidadePopulacional1 = (float) Populacao1 / area1;
+    PIBperCapita1 = pib1 / (float) Populacao1;
+    Superpoder1 = Populacao1 + area1 + pib1 + pontosTuristicos1 + PIBperCapita1 + (1 / DensidadePopulacional1);
 
-    printf("\nCARTA 2\n");
+    printf("\n***CARTA 2***\n");
     printf("Estado (A-H): ");
     scanf(" %c", &Estado2);
     printf("Codigo da Carta (ex: B01): ");
@@ -52,11 +54,12 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos2);
     
-    DensidadePopulacional2 = Populacao2 / area2;
-    PIBperCapita2 = pib2 / Populacao2;
+    DensidadePopulacional2 = (float) Populacao2 / area2;
+    PIBperCapita2 = pib2 / (float) Populacao2;
+    Superpoder2 = Populacao2 + area2 + pib2 + pontosTuristicos2 + PIBperCapita2 + (1 / DensidadePopulacional2);
 
   // Área para exibição dos dados da cidade
-    printf("\nCARTA 1\n");
+    printf("\n***CARTA 1***\n");
     printf("Estado: %c\n", Estado1);
     printf("Codigo da Carta: %s\n", Codigo1);
     printf("Nome da Cidade: %s\n", NomedaCidade1);
@@ -66,8 +69,9 @@ int main() {
     printf("Pontos Turisticos: %d\n", pontosTuristicos1);
     printf("Densidade Populacional: %.2f\n", DensidadePopulacional1);
     printf("PIB per Capita: %.2f\n", PIBperCapita1);
+    printf("Super Poder: %.2f\n", Superpoder1);
 
-    printf("\nCARTA 2\n");
+    printf("\n***CARTA 2***\n");
     printf("Estado: %c\n", Estado2);
     printf("Codigo da Carta: %s\n", Codigo2);
     printf("Nome da Cidade: %s\n", NomedaCidade2);
@@ -77,6 +81,66 @@ int main() {
     printf("Pontos Turisticos: %d\n", pontosTuristicos2);
     printf("Densidade Populacional: %.2f\n", DensidadePopulacional2);
     printf("PIB per Capita: %.2f\n", PIBperCapita2);
-   
+    printf("Super Poder: %.2f\n", Superpoder2);
+
+  // Área para comparação de cartas
+    printf("\n***COMPARAÇÃO DE CARTAS***\n");
+
+    printf("Populacao: ");
+    if (Populacao1 > Populacao2)
+        printf("Carta 1 venceu\n");
+    else if (Populacao2 > Populacao1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("Area: ");
+    if (area1 > area2)
+        printf("Carta 1 venceu\n");
+    else if (area2 > area1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("PIB: ");
+    if (pib1 > pib2)
+        printf("Carta 1 venceu\n");
+    else if (pib2 > pib1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("Pontos Turisticos: ");
+    if (pontosTuristicos1 > pontosTuristicos2)
+        printf("Carta 1 venceu\n");
+    else if (pontosTuristicos2 > pontosTuristicos1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("PIB per Capita: ");
+    if (PIBperCapita1 > PIBperCapita2)
+        printf("Carta 1 venceu\n");
+    else if (PIBperCapita2 > PIBperCapita1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("Densidade Populacional: ");
+    if (DensidadePopulacional1 < DensidadePopulacional2)
+        printf("Carta 1 venceu\n");
+    else if (DensidadePopulacional2 < DensidadePopulacional1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
+    printf("Super Poder: ");
+    if (Superpoder1 > Superpoder2)
+        printf("Carta 1 venceu\n");
+    else if (Superpoder2 > Superpoder1)
+        printf("Carta 2 venceu\n");
+    else
+        printf("Empate\n");
+
 return 0;
 } 
